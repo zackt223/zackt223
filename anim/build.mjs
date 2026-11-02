@@ -21,10 +21,10 @@ const measure = (s, size, bold) => [...s].reduce((w, ch) => w + ((bold ? BOLD : 
 
 const SIZE = 16;
 const LINES = [
-  { y: 96, tokens: [['TODO:', 'strike'], ['write', 'strike'], ['a', 'strike'], ['README', 'strike'], ['done.']] },
-  { y: 128, tokens: 'I build products, AI tools, and films made entirely in code.'.split(' ').map((t) => [t]) },
-  { y: 160, tokens: [['Right'], ['now:'], ['Ruhly,', 'bold', 'ruhly'], ['one'], ['passage'], ['every'], ['fajr.'], ['Launching'], ['for'], ['Ramadan.']] },
-  { y: 192, tokens: [['Also:'], ['PM-OS', 0, 'pmos'], ['·'], ['#suitup', 0, 'suitup'], ['·'], ['holidaymade'], ['·'], ['crossexam']] },
+  { y: 96, tokens: [['todo:', 'strike'], ['write', 'strike'], ['a', 'strike'], ['readme', 'strike'], ['done.']] },
+  { y: 128, tokens: 'i build products, ai tools, and films made entirely in code.'.split(' ').map((t) => [t]) },
+  { y: 160, tokens: [['right'], ['now:'], ['ruhly,', 'bold', 'ruhly'], ['one'], ['passage'], ['every'], ['fajr.'], ['launching'], ['for'], ['ramadan.']] },
+  { y: 192, tokens: [['also:'], ['pm-os', 0, 'pmos'], ['·'], ['#suitup', 0, 'suitup'], ['·'], ['holidaymade'], ['·'], ['crossexam']] },
 ];
 const words = [];
 for (const line of LINES) {
@@ -327,10 +327,10 @@ const build = (name) => {
   };
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="${ff}">
-<title>Hi, I'm Zack. A bug climbs out of this README and kicks the words off the page until Zack jumps down, knocks it back into its hole, and puts everything back.</title>
+<title>hi, i'm zack. a bug climbs out of this readme and kicks the words off the page until zack jumps down, knocks it back into its hole, and puts everything back.</title>
 <defs><radialGradient id="hole"><stop offset="0" stop-color="#000"/><stop offset=".7" stop-color="#0b0a1f"/><stop offset="1" stop-color="#2b2754"/></radialGradient></defs>
 <g fill="${c.fg}">${animT('translate', shake)}
-  <text x="2" y="44" font-size="30" font-weight="600">Hi, I’m Zack <tspan>👋</tspan></text>
+  <text x="2" y="44" font-size="30" font-weight="600">hi, i’m zack <tspan>👋</tspan></text>
   <g font-size="${SIZE}">
     ${words.filter((w) => !flying.has(w)).map(wordEl).join('\n    ')}
     <path d="M${r1(sx0)} ${96 - 5.2}H${r1(sx1)}" stroke="${c.fg}" stroke-width="1.3"/>
